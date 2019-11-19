@@ -1,0 +1,175 @@
+---
+title: "MVPs"
+output: html_notebook
+---
+
+### Libraries
+
+```{r}
+library(tidyverse)
+```
+
+### Theme
+
+```{r theme}
+my_theme <- function(){
+  list(
+      theme_minimal(),
+      scale_fill_manual(values=c("#A46583", "#e05d00", "#89A46F", "#7FBDFF"), 
+                       name="Leagues",
+                       breaks=c("MLB", "NBA", "NFL", "NHL"),
+                       labels=c("MLB", "NBA", "NFL", "NHL"))
+    )
+}
+```
+
+```{r g sports theme}
+G_theme <- function(){
+  list(
+      theme_minimal(),
+      scale_fill_manual(values=c("#AA1E23", "#F03C4B", "#FB8987", "#FAC8C8"), 
+                       name="Leagues",
+                       breaks=c("MLB", "NBA", "NFL", "NHL"),
+                       labels=c("MLB", "NBA", "NFL", "NHL"))
+    )
+}
+```
+
+### Data
+
+```{r data setup}
+mvp_simple <- read_csv('mvp-by-market.csv')
+mvp_team <- read_csv('mvp-by-team.csv')
+
+by_year <- mvp_team %>% arrange(year)
+
+top_10 <- mvp_team %>% filter(group_count >= 12)
+top_12 <- mvp_team %>% filter(group_count >= 11)
+
+leagues <- mvp_team %>% group_by(league) %>% count(market) %>% arrange(market) %>% ungroup()
+leagues <- leagues %>% rename(., num = n)
+#write_csv(leagues, "by-league.csv")
+leagues_with_total <- read_csv("league-totals.csv") #%>% mutate(market_total = coalesce(market_total, num))
+#write_csv(leagues_with_total, "league-totals.csv")
+
+top_10_leagues <- top_10 %>% group_by(league) %>% count(market) %>% arrange(market) 
+top_10_leagues <- top_10_leagues %>% rename(., num = n)
+
+top_12_leagues <- top_12 %>% group_by(league, market) %>% count(market) %>% arrange(market) 
+top_12_leagues <- top_12_leagues %>% rename(., num = n)
+
+MLB <- leagues %>%  filter(league == "MLB") 
+NBA <- leagues %>%  filter(league == "NBA") 
+NFL <- leagues %>%  filter(league == "NFL") 
+NHL <- leagues %>%  filter(league == "NHL") 
+
+MLB_full <- mvp_team %>%  filter(league == "MLB") 
+NBA_full <- mvp_team %>%  filter(league == "NBA") 
+NFL_full <- mvp_team %>%  filter(league == "NFL") 
+NHL_full <- mvp_team %>%  filter(league == "NHL") 
+
+#mvp <- mvp_team %>% select(league, team, market) %>% arrange(league, market)
+#mvp_spread <- mvp_team %>% spread(league, market) %>% arrange(desc(group_count))
+```
+
+### Basic Plot
+
+```{r total by market}
+mvp_markets <- ggplot(mvp_simple, aes(reorder(market, num_mvps), num_mvps)) +
+  geom_bar(stat = "identity") + 
+  coord_flip() +
+  labs(title = "MVP winners per market", x = "market", y = "Number of MVP winners", caption = "Source: ") +
+  #geom_text(aes(label = num_mvps), colour = "#009bff", hjust = -1) + 
+  theme_minimal()
+
+mvp_markets
+```
+
+```{r multiples by league}
+mvp_leagues <- ggplot(leagues_with_total, aes(reorder(market, market_total), num, fill = league)) +
+  geom_bar(stat = "identity") + 
+  my_theme() +
+  coord_flip() +
+  labs(y = "Number of MVP winners", caption = "Source: Sports Reference") #title = "Major sport MVPs by market since 1957", 
+
+mvp_leagues 
+
+ggsave("league_stack.pdf", plot = mvp_leagues, width = 7.5, height = 9, units = "in", dpi = 300)
+ggsave("league_stack.png", plot = mvp_leagues, width = 8, height = 8, units = "in", dpi = 300)
+```
+
+```{r individual mlb}
+mvp_mlb <- ggplot(MLB, aes(reorder(market, num), num, width=.8)) +
+  geom_bar(stat = "identity", fill = "tomato") + 
+  coord_flip() +
+  labs(title = "Number of MVP winners in Major League Baseball per market", x = "market", y = "Number of MVP winners", caption = "Source: ") +
+  #geom_text(aes(label = num), colour = "#009bff", hjust = 1.3) + 
+  theme_minimal()
+
+mvp_mlb
+```
+
+```{r individual nba}
+mvp_nba <- ggplot(NBA, aes(reorder(market, num), num, width=.8)) +
+  geom_bar(stat = "identity", fill = "#A46583") + 
+  coord_flip() +
+  labs(title = "Number of MVP winners in the National Basketball Association per market", x = "market", y = "Number of MVP winners", caption = "Source: ") +
+  theme_minimal()
+
+mvp_nba
+```
+
+```{r individual nfl}
+mvp_nfl <- ggplot(NFL, aes(reorder(market, num), num, width=.8)) +
+  geom_bar(stat = "identity", fill = "#89A46F") + 
+  coord_flip() +
+  labs(title = "Number of MVP winners in the National Football League per market", x = "market", y = "Number of MVP winners", caption = "Source: ") +
+  #geom_text(aes(label = num), colour = "#009bff", hjust = 1.3) + 
+  theme_minimal()
+
+mvp_nfl
+```
+
+```{r individual nhl}
+mvp_nhl <- ggplot(NHL, aes(reorder(market, num), num, width=.8)) +
+  geom_bar(stat = "identity", fill="#41b6c4") + 
+  coord_flip() +
+  labs(title = "Number of MVP winners in the National Hockey League per market", x = "market", y = "Number of MVP winners", caption = "Source: ") +
+  #geom_text(aes(label = num), colour = "#009bff", hjust = 1.3) + 
+  theme_minimal()
+
+mvp_nhl
+```
+
+-----
+
+By league: 
+
+```{r league/market multiples}
+all_leagues <- ggplot(leagues, aes(reorder(league, num), num, width=.6)) +
+  geom_bar(stat = "identity", aes(fill = league)) +
+  my_theme() +
+  coord_flip() +
+  labs(title = "A count of each market's MVP winners by league", x = "League", y = "Number of MVPs", caption = "Source: ") +
+  facet_wrap(~ market) 
+
+all_leagues
+
+#ggsave("league_multiples.pdf", plot = all_leagues, width = 11, height = 8, units = "in", dpi = 320)
+ggsave("league_multiples.png", plot = all_leagues, width = 11, height = 8, units = "in", dpi = 320)
+```
+
+```{r multiples top 10}
+top_leagues <- ggplot(top_12_leagues, aes(reorder(league, num), num, width=.6)) +
+  geom_bar(stat = "identity", aes(fill = league)) +
+  my_theme() +
+  coord_flip() +
+  #labs(title = "A count of each market's MVP winners by league", x = "League", y = "Number of MVPs", caption = "Source: ") +
+  facet_wrap(~ market) 
+
+top_leagues
+
+ggsave("league_multiples_promo.pdf", plot = top_leagues, width = 11, height = 8, units = "in", dpi = 300)
+ggsave("league_multiples_promo.png", plot = top_leagues, width = 11, height = 8, units = "in", dpi = 300)
+```
+

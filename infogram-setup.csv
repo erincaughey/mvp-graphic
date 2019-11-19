@@ -1,0 +1,38 @@
+﻿market,MLB,NBA,NFL,NHL,total_mvps,teams
+Bay Area,17,2,7,1,27,"Golden State Warriors, San Francisco Giants, San Jose Sharks, Oakland Athletics, Oakland Raiders, San Francisco 49ers"
+Boston,8,10,3,5,26,"Boston Red Sox, New England Patriots, Boston Celtics, Boston Bruins"
+Chicago,10,6,1,5,22,"Chicago Blackhawks, Chicago Cubs, Chicago Bulls, Chicago White Sox, Chicago Bears"
+LA/Anaheim,9,8,2,2,21,"Los Angeles Angels, Los Angeles Dodgers, Anaheim Ducks, Los Angeles Lakers, Los Angeles Kings, Los Angeles Raiders, Los Angeles Rams"
+Milwaukee/GB,6,4,8,0,18,"Milwaukee Bucks, Milwaukee Brewers, Green Bay Packers, Milwaukee Braves"
+Philadelphia,5,7,1,4,17,"Philadelphia Phillies, Philadelphia 76ers, Philadelphia Flyers, Philadelphia Eagles, Philadelphia Warriors"
+NY/New Jersey,9,0,2,4,16,"New Jersey Devils, New York Yankees, New York Rangers, New York Giants, New York Islanders, New York Knicks"
+Pittsburgh,7,0,1,7,15,"Pittsburgh Penguins, Pittsburgh Pirates, Pittsburgh Steelers"
+St. Louis,9,1,3,2,15,"St. Louis Cardinals, St. Louis Rams, St. Louis Blues, St. Louis Hawks"
+Cincinnati,9,1,2,0,12,"Cincinnati Reds, Cincinnati Bengals, Cincinnati Royals"
+Detroit,5,0,1,5,11,"Detroit Tigers, Detroit Lions, Detroit Red Wings"
+Baltimore,5,1,5,0,11,"Baltimore Orioles, Baltimore Colts, Baltimore Bullets"
+Edmunton,0,0,0,10,10,Edmunton Oilers
+Minnesota,5,1,3,0,9,"Minnesota Vikings, Minnesota Twins, Minnesota Timberwolves"
+Dallas,6,1,1,0,8,"Texas Rangers, Dallas Mavericks, Dallas Cowboys"
+"Washington, DC",1,0,3,3,7,"Washington Nationals, Washington Capitals, Washington Redskins"
+Houston,2,4,1,0,7,"Houston Rockets, Houston Astros, Houston Oilers"
+Montreal,0,0,0,7,7,Montreal Canadiens
+Denver,1,0,3,2,6,"Denver Broncos, Colorado Avalanche, Colorado Rockies"
+Cleveland,0,2,4,0,6,"Cleveland Cavaliers, Cleveland Browns"
+Atlanta,4,0,1,0,5,"Atlanta Falcons, Atlanta Braves"
+Buffalo,0,1,2,2,5,"Buffalo Sabres, Buffalo Bills, Buffalo Braves"
+Miami,1,2,1,0,4,"Miami Marlins, Miami Heat, Miami Dolphins"
+Indianapolis,0,0,4,0,4,Indianapolis Colts
+Phoenix,0,3,0,0,3,Phoenix Suns
+San Antonio,0,3,0,0,3,San Antonio Spurs
+Seattle,2,0,1,0,3,"Seattle Mariners, Seattle Seahawks"
+Toronto,2,0,0,0,2,Toronto Blue Jays
+Kansas City,1,0,1,0,2,"Kansas City Chiefs, Kansas City Royals"
+Oklahoma City,0,2,0,0,2,Oklahoma City Thunder
+San Diego,1,0,1,0,2,"San Diego Chargers, San Diego Padres"
+Utah,0,2,0,0,2,Utah Jazz
+Tennessee,0,0,1,0,1,Tennessee Titans
+Tampa Bay,0,0,0,2,2,Tampa Bay Lightning
+Carolina,0,0,1,0,1,Carolina Panthers
+Portland,0,1,0,0,1,Portland Trail Blazers
+Vancouver,0,0,0,1,1,Vancouver Canucks
