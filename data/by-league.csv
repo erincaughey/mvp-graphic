@@ -1,88 +1,88 @@
-league,market,num,market_total
-MLB,Atlanta,4,5
-NFL,Atlanta,1,5
-MLB,Baltimore,5,11
-NBA,Baltimore,1,11
-NFL,Baltimore,5,11
-MLB,Bay Area,17,27
-NBA,Bay Area,2,27
-NFL,Bay Area,7,27
-NHL,Bay Area,1,27
-MLB,Boston,8,26
-NBA,Boston,10,26
-NFL,Boston,3,26
-NHL,Boston,5,26
-NBA,Buffalo,1,5
-NFL,Buffalo,2,5
-NHL,Buffalo,2,5
-NFL,Carolina,1,1
-MLB,Chicago,10,22
-NBA,Chicago,6,22
-NFL,Chicago,1,22
-NHL,Chicago,5,22
-MLB,Cincinnati,9,12
-NBA,Cincinnati,1,12
-NFL,Cincinnati,2,12
-NBA,Cleveland,2,6
-NFL,Cleveland,4,6
-MLB,Dallas,6,8
-NBA,Dallas,1,8
-NFL,Dallas,1,8
-MLB,Denver,1,6
-NFL,Denver,3,6
-NHL,Denver,2,6
-MLB,Detroit,5,11
-NFL,Detroit,1,11
-NHL,Detroit,5,11
-NHL,Edmunton,10,
-MLB,Houston,2,7
-NBA,Houston,4,7
-NFL,Houston,1,7
-NFL,Indianapolis,4,
-MLB,Kansas City,1,
-NFL,Kansas City,1,
-MLB,LA/Anaheim,9,21
-NBA,LA/Anaheim,8,21
-NFL,LA/Anaheim,2,21
-NHL,LA/Anaheim,2,21
-MLB,Miami,1,4
-NBA,Miami,2,4
-NFL,Miami,1,4
-MLB,Milwaukee/GB,6,18
-NBA,Milwaukee/GB,4,18
-NFL,Milwaukee/GB,8,18
-MLB,Minnesota,5,9
-NBA,Minnesota,1,9
-NFL,Minnesota,3,9
-NHL,Montreal,7,
-MLB,NY/New Jersey,9,16
-NBA,NY/New Jersey,1,16
-NFL,NY/New Jersey,2,16
-NHL,NY/New Jersey,4,16
-NBA,Oklahoma City,2,
-MLB,Philadelphia,5,17
-NBA,Philadelphia,7,17
-NFL,Philadelphia,1,17
-NHL,Philadelphia,4,17
-NBA,Phoenix,3,3
-MLB,Pittsburgh,7,15
-NFL,Pittsburgh,1,15
-NHL,Pittsburgh,7,15
-NBA,Portland,1,
-NBA,San Antonio,3,
-MLB,San Diego,1,
-NFL,San Diego,1,
-MLB,Seattle,2,
-NFL,Seattle,1,
-MLB,St. Louis,9,15
-NBA,St. Louis,1,15
-NFL,St. Louis,3,15
-NHL,St. Louis,2,15
-NHL,Tampa Bay,1,1
-NFL,Tennessee,1,1
-MLB,Toronto,2,2
-NBA,Utah,2,
-NHL,Vancouver,1,
-MLB,"Washington, DC",1,7
-NFL,"Washington, DC",3,7
-NHL,"Washington, DC",3,7
+league,market,num
+MLB,Atlanta,4
+NFL,Atlanta,1
+MLB,Baltimore,5
+NBA,Baltimore,1
+NFL,Baltimore,6
+MLB,Bay Area,17
+NBA,Bay Area,2
+NFL,Bay Area,7
+NHL,Bay Area,1
+MLB,Boston,8
+NBA,Boston,10
+NFL,Boston,3
+NHL,Boston,5
+NBA,Buffalo,1
+NFL,Buffalo,2
+NHL,Buffalo,2
+NFL,Carolina,1
+MLB,Chicago,10
+NBA,Chicago,6
+NFL,Chicago,1
+NHL,Chicago,5
+MLB,Cincinnati,9
+NBA,Cincinnati,1
+NFL,Cincinnati,2
+NBA,Cleveland,2
+NFL,Cleveland,4
+MLB,Dallas,6
+NBA,Dallas,1
+NFL,Dallas,1
+MLB,Denver,1
+NFL,Denver,3
+NHL,Denver,2
+MLB,Detroit,5
+NFL,Detroit,1
+NHL,Detroit,5
+NHL,Edmunton,10
+MLB,Houston,2
+NBA,Houston,4
+NFL,Houston,1
+NFL,Indianapolis,4
+MLB,Kansas City,1
+NFL,Kansas City,1
+MLB,LA/Anaheim,11
+NBA,LA/Anaheim,8
+NFL,LA/Anaheim,2
+NHL,LA/Anaheim,2
+MLB,Miami,1
+NBA,Miami,2
+NFL,Miami,1
+MLB,Milwaukee/GB,6
+NBA,Milwaukee/GB,5
+NFL,Milwaukee/GB,8
+MLB,Minnesota,5
+NBA,Minnesota,1
+NFL,Minnesota,3
+NHL,Montreal,7
+MLB,NY/New Jersey,9
+NBA,NY/New Jersey,1
+NFL,NY/New Jersey,2
+NHL,NY/New Jersey,4
+NBA,Oklahoma City,2
+MLB,Philadelphia,5
+NBA,Philadelphia,7
+NFL,Philadelphia,1
+NHL,Philadelphia,4
+NBA,Phoenix,3
+MLB,Pittsburgh,7
+NFL,Pittsburgh,1
+NHL,Pittsburgh,7
+NBA,Portland,1
+NBA,San Antonio,3
+MLB,San Diego,1
+NFL,San Diego,1
+MLB,Seattle,2
+NFL,Seattle,1
+MLB,St. Louis,9
+NBA,St. Louis,1
+NFL,St. Louis,3
+NHL,St. Louis,2
+NHL,Tampa Bay,2
+NFL,Tennessee,1
+MLB,Toronto,2
+NBA,Utah,2
+NHL,Vancouver,1
+MLB,"Washington, DC",1
+NFL,"Washington, DC",3
+NHL,"Washington, DC",3

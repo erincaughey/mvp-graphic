@@ -38,8 +38,8 @@ G_theme <- function(){
 ### Data
 
 ```{r data setup}
-mvp_simple <- read_csv('mvp-by-market.csv')
-mvp_team <- read_csv('mvp-by-team.csv')
+mvp_simple <- read_csv('data/mvp-by-market-update.csv')
+mvp_team <- read_csv('data/mvp-by-team-update.csv')
 
 by_year <- mvp_team %>% arrange(year)
 
@@ -48,8 +48,8 @@ top_12 <- mvp_team %>% filter(group_count >= 11)
 
 leagues <- mvp_team %>% group_by(league) %>% count(market) %>% arrange(market) %>% ungroup()
 leagues <- leagues %>% rename(., num = n)
-#write_csv(leagues, "by-league.csv")
-leagues_with_total <- read_csv("league-totals.csv") #%>% mutate(market_total = coalesce(market_total, num))
+write_csv(leagues, "data/by-league.csv")
+leagues_with_total <- read_csv("data/league-totals-update.csv") #%>% mutate(market_total = coalesce(market_total, num))
 #write_csv(leagues_with_total, "league-totals.csv")
 
 top_10_leagues <- top_10 %>% group_by(league) %>% count(market) %>% arrange(market) 
@@ -94,8 +94,8 @@ mvp_leagues <- ggplot(leagues_with_total, aes(reorder(market, market_total), num
 
 mvp_leagues 
 
-ggsave("league_stack.pdf", plot = mvp_leagues, width = 7.5, height = 9, units = "in", dpi = 300)
-ggsave("league_stack.png", plot = mvp_leagues, width = 8, height = 8, units = "in", dpi = 300)
+ggsave("league_stack-update.pdf", plot = mvp_leagues, width = 7.5, height = 9, units = "in", dpi = 300)
+ggsave("league_stack-update.png", plot = mvp_leagues, width = 8, height = 8, units = "in", dpi = 300)
 ```
 
 ```{r individual mlb}
