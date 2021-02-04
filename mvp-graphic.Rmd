@@ -1,0 +1,52 @@
+---
+title: "MVPs"
+output: html_notebook
+---
+
+### Libraries
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r theme}
+my_theme <- function(){
+  list(
+      theme_minimal(),
+      scale_fill_manual(values=c("#A46583", "#e05d00", "#89A46F", "#7FBDFF"), 
+                       name="Leagues",
+                       breaks=c("MLB", "NBA", "NFL", "NHL"),
+                       labels=c("MLB", "NBA", "NFL", "NHL"))
+    )
+}
+```
+
+### Data
+
+```{r data setup}
+mvp_team <- read_csv('data/mvp-data-020421.csv')
+
+by_year <- mvp_team %>% arrange(year)
+
+leagues <- mvp_team %>% group_by(league) %>% count(market) %>% arrange(market) %>% ungroup()
+leagues <- leagues %>% rename(., num = n)
+write_csv(leagues, "data/by-league-020421.csv")
+#update by adding summing each market's league_totals or check against original data total_mvps
+leagues_with_total <- read_csv("data/league-totals-020421.csv") 
+```
+
+### Plot
+
+```{r multiples by league}
+mvp_leagues <- ggplot(leagues_with_total, aes(reorder(market, market_total), league_total, fill = league)) +
+  geom_bar(stat = "identity") + 
+  my_theme() +
+  coord_flip() +
+  labs(y = "Number of MVP winners", caption = "Source: Sports Reference") #title = "Major sport MVPs by market since 1957", 
+
+mvp_leagues 
+
+ggsave("league_stack-020421.pdf", plot = mvp_leagues, width = 7.5, height = 9, units = "in", dpi = 300)
+ggsave("league_stack-020421.png", plot = mvp_leagues, width = 8, height = 8, units = "in", dpi = 300)
+```

@@ -43,8 +43,8 @@ mvp_team <- read_csv('data/mvp-by-team-update.csv')
 
 by_year <- mvp_team %>% arrange(year)
 
-top_10 <- mvp_team %>% filter(group_count >= 12)
-top_12 <- mvp_team %>% filter(group_count >= 11)
+top_10 <- mvp_team %>% filter(group_total >= 12)
+top_12 <- mvp_team %>% filter(group_total >= 11)
 
 leagues <- mvp_team %>% group_by(league) %>% count(market) %>% arrange(market) %>% ungroup()
 leagues <- leagues %>% rename(., num = n)
