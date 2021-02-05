@@ -1,5 +1,5 @@
 league,market,num
-MLB,Atlanta,4
+MLB,Atlanta,5
 NFL,Atlanta,1
 MLB,Baltimore,5
 NBA,Baltimore,1
@@ -16,7 +16,7 @@ NBA,Buffalo,1
 NFL,Buffalo,2
 NHL,Buffalo,2
 NFL,Carolina,1
-MLB,Chicago,10
+MLB,Chicago,11
 NBA,Chicago,6
 NFL,Chicago,1
 NHL,Chicago,5
@@ -34,7 +34,7 @@ NHL,Denver,2
 MLB,Detroit,5
 NFL,Detroit,1
 NHL,Detroit,5
-NHL,Edmunton,10
+NHL,Edmunton,11
 MLB,Houston,2
 NBA,Houston,4
 NFL,Houston,1
@@ -50,7 +50,7 @@ NBA,Miami,2
 NFL,Miami,1
 MLB,Milwaukee/GB,6
 NBA,Milwaukee/GB,5
-NFL,Milwaukee/GB,8
+NFL,Milwaukee/GB,9
 MLB,Minnesota,5
 NBA,Minnesota,1
 NFL,Minnesota,3

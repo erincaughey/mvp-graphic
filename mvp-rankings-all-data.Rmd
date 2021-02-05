@@ -38,13 +38,13 @@ G_theme <- function(){
 ### Data
 
 ```{r data setup}
-mvp_simple <- read_csv('data/mvp-by-market-update.csv')
-mvp_team <- read_csv('data/mvp-by-team-update.csv')
+#mvp_simple <- read_csv('data/mvp-by-market-update.csv')
+mvp_team <- read_csv('data/mvp-data-020421.csv')
 
 by_year <- mvp_team %>% arrange(year)
 
-top_10 <- mvp_team %>% filter(group_total >= 12)
-top_12 <- mvp_team %>% filter(group_total >= 11)
+top_10 <- mvp_team %>% filter(group_totals >= 12)
+top_12 <- mvp_team %>% filter(group_totals >= 11)
 
 leagues <- mvp_team %>% group_by(league) %>% count(market) %>% arrange(market) %>% ungroup()
 leagues <- leagues %>% rename(., num = n)
@@ -122,12 +122,17 @@ mvp_nba
 ```{r individual nfl}
 mvp_nfl <- ggplot(NFL, aes(reorder(market, num), num, width=.8)) +
   geom_bar(stat = "identity", fill = "#89A46F") + 
+  scale_y_continuous(breaks=c(0, 2, 4, 6, 8)) +
   coord_flip() +
-  labs(title = "Number of MVP winners in the National Football League per market", x = "market", y = "Number of MVP winners", caption = "Source: ") +
+  #title = "MVPs per market in the NFL",
+  labs(y = "Number of MVPs", caption = "Source: Sports Reference") +
   #geom_text(aes(label = num), colour = "#009bff", hjust = 1.3) + 
   theme_minimal()
 
 mvp_nfl
+
+ggsave("nfl_stack.pdf", plot = mvp_nfl, width = 7.5, height = 9, units = "in", dpi = 300)
+ggsave("nfl_stack.png", plot = mvp_nfl, width = 8, height = 8, units = "in", dpi = 300)
 ```
 
 ```{r individual nhl}
